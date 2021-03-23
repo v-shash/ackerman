@@ -1,13 +1,13 @@
 # URL shortener service deployment
 
-- [URL shortener service](#url-shortener-service)
-  - [Prerequisites](#prerequisites)
-    - [1. Docker](#1-docker)
-    - [2. cd into deployment directory](#2-cd-into-deployment-directory)
-    - [3. AWS User with Admin privileges](#3-aws-user-with-admin-privileges)
-    - [4. Build docker container used to deploy infrastructure](#4-build-docker-container-used-to-deploy-infrastructure)
-  - [Deploy](#deploy)
-  - [License](#license)
+- [Prerequisites](#prerequisites)
+  - [1. Docker](#1-docker)
+  - [2. cd into deployment directory](#2-cd-into-deployment-directory)
+  - [3. AWS User with Admin privileges](#3-aws-user-with-admin-privileges)
+  - [4. Build docker container used to deploy infrastructure](#4-build-docker-container-used-to-deploy-infrastructure)
+- [Deploy](#deploy)
+- [Destroy](#destroy)
+- [License](#license)
 
 ## Prerequisites
 
@@ -15,7 +15,13 @@
 
 Please make sure to have docker installed.
 
-#### 2. AWS User with Admin privileges
+#### 2. cd into deployment directory
+
+```shell
+cd deployment
+```
+
+#### 3. AWS User with Admin privileges
 
 replace env.list.example with env.list and update the following variables
 
@@ -24,7 +30,7 @@ AWS_ACCESS_KEY_ID=HelloIAmSecretAccessKeyID
 AWS_SECRET_ACCESS_KEY=HelloIAmSecretAccessKey
 ```
 
-#### 3. Build docker container used to deploy infrastructure
+#### 4. Build docker container used to deploy infrastructure
 
 ```shell
 docker build -t mhusseini/deploy_url_shortener .
