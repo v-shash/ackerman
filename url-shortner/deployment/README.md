@@ -1,4 +1,13 @@
-# URL shortener service
+# URL shortener service deployment
+
+- [URL shortener service](#url-shortener-service)
+  - [Prerequisites](#prerequisites)
+    - [1. Docker](#1-docker)
+    - [2. cd into deployment directory](#2-cd-into-deployment-directory)
+    - [3. AWS User with Admin privileges](#3-aws-user-with-admin-privileges)
+    - [4. Build docker container used to deploy infrastructure](#4-build-docker-container-used-to-deploy-infrastructure)
+  - [Deploy](#deploy)
+  - [License](#license)
 
 ## Prerequisites
 
@@ -15,13 +24,7 @@ AWS_ACCESS_KEY_ID=HelloIAmSecretAccessKeyID
 AWS_SECRET_ACCESS_KEY=HelloIAmSecretAccessKey
 ```
 
-#### 3. go into deployment directory
-
-```shell
-cd deployment
-```
-
-#### 4. Build docker container used to deploy infrastructure
+#### 3. Build docker container used to deploy infrastructure
 
 ```shell
 docker build -t mhusseini/deploy_url_shortener .
@@ -45,6 +48,14 @@ URLs available:
 2. http://blablabla.us-east-1.elb.amazonaws.com/newurl -post request-
 3. http://blablabla.us-east-1.elb.amazonaws.com/someurl12 -get request-
 @@@@@@NOTE: DO NOT FORGET TO TERRAFORM DESTROY
+```
+
+## Destroy
+
+To destroy infrastruture while you're still inside the container
+
+```shell
+terraform destroy
 ```
 
 ## License
