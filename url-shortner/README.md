@@ -6,19 +6,19 @@
 
 Please make sure to have docker installed.
 
-#### 2. AWS User with Admin privileges
+#### 2. cd into deployment directory
+
+```shell
+cd deployment
+```
+
+#### 3. AWS User with Admin privileges
 
 replace env.list.example with env.list and update the following variables
 
 ```
 AWS_ACCESS_KEY_ID=HelloIAmSecretAccessKeyID
 AWS_SECRET_ACCESS_KEY=HelloIAmSecretAccessKey
-```
-
-#### 3. go into deployment directory
-
-```shell
-cd deployment
 ```
 
 #### 4. Build docker container used to deploy infrastructure
